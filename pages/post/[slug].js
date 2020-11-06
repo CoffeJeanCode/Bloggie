@@ -2,12 +2,15 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown/with-html";
-
+import Link from "next/link";
 export default function Post({ content, frontmatter }) {
   return (
-    <article>
-      <ReactMarkdown escapeHtml={false} source={content} />
-    </article>
+    <>
+      <Link href="/">Back to Home</Link>
+      <article>
+        <ReactMarkdown escapeHtml={false} source={content} />
+      </article>
+    </>
   );
 }
 

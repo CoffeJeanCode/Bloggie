@@ -1,10 +1,16 @@
 ---
-title: First post
+title: How Debug in React
 description: My first post.
-cover: https://res.cloudinary.com/dmq9pzw0o/image/upload/v1587362417/how-to-make-static-blog/Clipboard_2020-04-19-20-28-04_1_xper5b.jpg
-date: 2020-04-16
+cover: /debug.png
+tags: ["React"]
+lang: Spanish
+date: 2020-11-16
 ---
 
-## hello
+## Why debbug in react
 
-![Hello](https://blog.lingoda.com/wp-content/uploads/2020/10/How-To-Say-Hello-in-10-Languages.jpg)
+## Dev Tools
+
+If you
+
+![Debugging](https://railsware.com/blog/wp-content/uploads/2018/05/Debugging-React-Native-icon-180x180.png)

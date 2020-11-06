@@ -1,27 +1,18 @@
-import Link from "next/link";
 import fs from "fs";
 import matter from "gray-matter";
+import Container from "@material-ui/core/Container";
+
+import PostCard from "../components/PostCard";
 
 export default function Home({ posts }) {
   return (
-    <div>
-      {posts.map(
-        ({ frontmatter: { title, description, date, cover }, slug }) => (
-          <article key={slug}>
-            <header>
-              <img src={cover} alt="" />
-              <h3 className="mb-2">
-                <Link href={`/post/${slug}`}>{title}</Link>
-              </h3>
-            </header>
-            <span className="mb-4 text-xs">{date}</span>
-            <section>
-              <p className="mb-8">{description}</p>
-            </section>
-          </article>
-        )
-      )}
-    </div>
+    <>
+      <Container maxWidth="sm">
+        {posts.map((props) => (
+          <PostCard {...props} key={props.slug} />
+        ))}
+      </Container>
+    </>
   );
 }
 
