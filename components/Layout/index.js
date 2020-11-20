@@ -1,4 +1,4 @@
-import Seo from "./Seo";
+import Seo from "../Seo";
 
 export default function Layout({ children, title, description }) {
   return (
