@@ -1,49 +1,53 @@
-import fs from "fs";
-import matter from "gray-matter";
-import Container from "@material-ui/core/Container";
+import fs from 'fs'
+import matter from 'gray-matter'
+import { Container } from '@chakra-ui/react'
 
-import PostCard from "../components/PostCard";
+import PostCard from '../components/PostCard'
+import Layout from '../components/Layout'
 
 export default function Home({ posts }) {
   return (
-    <>
-      <Container maxWidth="sm">
+    <Layout
+      title="Home"
+      description="Bloogie, a blog for developers"
+    >
+      <Container maxW="sm">
         {posts.map((props) => (
           <PostCard {...props} key={props.slug} />
         ))}
       </Container>
-    </>
-  );
+    </Layout>
+  )
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/content/posts`);
+  const files = fs.readdirSync(`${process.cwd()}/content/posts`)
 
   const posts = files.map((filename) => {
     const markdownWithMetadata = fs
       .readFileSync(`content/posts/${filename}`)
-      .toString();
+      .toString()
 
-    const { data } = matter(markdownWithMetadata);
+    const { data } = matter(markdownWithMetadata)
 
     // Convert post date to format: Month day, Year
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    const formattedDate = data.date.toLocaleDateString("en-US", options);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' }
+    const formattedDate = data.date.toLocaleDateString('en-US', options)
 
     const frontmatter = {
       ...data,
       date: formattedDate,
-    };
+    }
 
     return {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
       frontmatter,
-    };
-  });
+    }
+  })
 
   return {
     props: {
       posts,
     },
-  };
+  }
 }
