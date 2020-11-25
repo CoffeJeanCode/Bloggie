@@ -3,8 +3,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import { Container, Skeleton, Fade, Stack, StackItem } from "@chakra-ui/react";
 
-import PostCard from "../components/PostCard";
-import Layout from "../components/Layout";
+import PostCard from "components/PostCard";
+import Layout from "components/Layout";
 
 export default function Home({ posts }) {
   const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ export default function Home({ posts }) {
   }, []);
 
   return (
-    <Layout title="Home" description="A blog for js developers">
+    <Layout title="Home" description="A simple blog for developers">
       <Container maxW="sm">
         <Stack spacing={8}>
           {posts.map((props) => (

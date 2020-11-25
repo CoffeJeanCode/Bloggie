@@ -2,7 +2,7 @@ import { Box, Heading, Text, Tag, TagLabel } from "@chakra-ui/react";
 import Link from "next/link";
 import { usePalette } from "react-palette";
 
-import { CoverContainer, CoverImage, CardContainer } from "./styles";
+import { CoverContainer, CoverImage } from "./styles";
 export default function PostCard({
   frontmatter: { title, date, cover, tags },
   slug,
