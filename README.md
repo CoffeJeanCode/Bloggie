@@ -4,4 +4,4 @@
 
 ## Techs
 - Next
-- Cloudfare
+- Cloudinary
